@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="classic" template="/WEB-INF/layouts/classic.jsp">
+		<put-attribute name="header" value="/WEB-INF/layouts/header.jsp" />
+		<put-attribute name="leftsidebar" value="/WEB-INF/layouts/leftsidebar.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
+	</definition>
+	
+	<!-- Administrator login definition -->
+	<definition name="adminlogin" template="/WEB-INF/layouts/adminlogin.jsp"/>
+	
+	<!-- After login show user profile /admin -->
+	<definition name="index" extends="classic">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/WEB-INF/views/home/index.jsp" />
+	</definition>	
+	
+	<!-- public page -->
+	<definition name="front" extends="classic">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/WEB-INF/views/home/index2.jsp" />
+	</definition>
+	
+	<definition name="login" extends="adminlogin">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+	
+	<definition name="register" extends="adminlogin">
+		<put-attribute name="title" value="Register" />
+		<put-attribute name="body" value="/WEB-INF/views/register.jsp" />
+	</definition>
+	<definition name="logout" extends="adminlogin">
+		<put-attribute name="title" value="Logout" />
+		<put-attribute name="body" value="/WEB-INF/views/logout.jsp" />
+	</definition>
+	
+	<!-- User definitions -->
+	<definition name="addUser" extends="classic">
+		<put-attribute name="title" value="Add new user" />
+		<put-attribute name="body" value="/WEB-INF/views/user/addUser.jsp" />
+	</definition>
+</tiles-definitions>
